@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFEDC;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #D2D2D2;
+    padding: 0;
+    height: 100px;
+}
+
+#logoHeader {
+    flex: 0 0 10%; 
+}
+
+#logo {
+    width: 100%; 
+    height: auto; }
+
+.lienPage {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.header-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #FFFEDC;
+    color: #000000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.header-link:hover {
+    background-color: #f0f0f0;
+}
+
+.title {
+    font-size: 24px; 
+    margin-left: auto;
+}
+
+.main-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in;
+    list-style: none;
+    border-radius: 100%;
+}
+
+.imageVoiture {
+    min-width: 33.3333%;
+    box-sizing: border-box;
+    padding: 0 10px; 
+    border-radius: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    display: block;
+    border-radius: 20% 20% 0% 0%;
+}
+
+.DescVoiture {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    text-align: left;
+    list-style: none;
+    font-size: large;
+}
+
+.carousel-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.carousel-btn img {
+    width: 96px;
+    height: 96px;
+}
+
+.prev-btn {
+    left: -100px; 
+}
+
+.next-btn {
+    right: -100px; 
+}
+
+.advanced-search-btn {
+    background-color: #d3d3d3;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.advanced-search-btn:hover {
+    background-color: #b0b0b0;
+}
+
+#voitureDeLoc {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+}
+
+.descriptionVoiture {
+    position: absolute;
+    left: 30%;
+    font-size: 25px;
+}
+
+
+figcaption {
+    margin-top: 10px; 
+    width: 100%;
+}
+
+figcaption ul {
+    list-style: none;
+    padding: 0; 
+    margin: 0; 
+}
+
+.voitureCaption {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: 40%;
+    margin: 20px auto; 
+}
+
+#btnReserver {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}

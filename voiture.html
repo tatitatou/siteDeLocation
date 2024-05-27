@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Location de Voiture</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="location.html" id="logoHeader">
+            <img src="images/logo.webp" id="logo" alt="image Indisponible" />
+        </a>
+        <ul class="lienPage">
+            <li><a href="location.html" class="header-link">Location de voiture</a></li>
+            <li><a href="#" class="header-link">Achat de voiture</a></li>
+            <li><a href="#" class="header-link">Parrainage de véhicule</a></li>
+        </ul>
+    </header>
+    <h1>Choisissez cette voiture</h1>
+    <div class="descriptionVoiture"></div>
+    <figure>
+        <img src="images/rangeRover2021.jpg" id="voitureDeLoc" alt="Range Rover 2021">
+    </figure>
+    <figcaption class="voitureCaption">
+        <ul>
+            <li><b>Prix</b> : 70€/jour</li>
+            <li><b>Modèle</b> : Range Rover 2021</li>
+            <li><b>Localisation</b> : Bayonne</li>
+            <li><b>kilométrage</b> : 40 000km</li>
+        </ul>
+        <label for="debut"><b>Date de début de location:</b></label>
+        <input type="date" id="debut" name="trip-start" value="2024-05-26" min="2024-05-26" max="2025-05-26" />
+        <label for="fin"><b>Date de fin de location:</b></label>
+        <input type="date" id="fin" name="trip-end" value="2024-05-27" min="2024-05-26" max="2025-05-26" /> </figcaption>
+        <button id="btnReserver">Réserver</button>
+    </figcaption>
+
+    </div>
+</body>
+
+</html>

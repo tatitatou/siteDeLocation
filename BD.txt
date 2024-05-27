@@ -1,0 +1,98 @@
+CREATE TABLE Voiture
+(
+	id INT,
+	marque VARCHAR2(30) NOT NULL,
+	modele VARCHAR2(30) NOT NULL,
+	PRIMARY KEY (id)
+)
+
+CREATE TABLE Disponibilite
+(
+	idvehicule INT,
+	dateDeb DATE,
+	dateFin DATE CHECK(dateDeb<dateFin) ,
+	prixJour INT,
+	statut VARCHAR2(1),
+	FOREIGN KEY (idVehicule) REFERENCES Voiture(id) ON DELETE CASCADE,
+	PRIMARY KEY (idVehicule, dateDeb, dateFin)
+)
+
+Exemple d'insertion :
+INSERT INTO Voiture (id,marque,modele) VALUES
+(1,'Land Rover','Range Rover 2021')
+(2,'BMW','Berline 2020')
+(3,'Audi','Berline A3 2024')
+(4,'Jeep','Jeep 2023')
+(5,'BMW','Mini Cooper 2024')
+(6,'Nissan','Berline 2017')
+
+
+INSERT INTO Voiture (idvehicule,dateDeb,dateFin,prixJour,statut) VALUES
+(1, 2024-05-26, 2024-06-02,70,0)
+(1, 2024-06-03, 2024-06-15,99,1)
+(2, 2024-05-26, 2024-06-2023,139,0)
+(3, 2024-05-26, 2024-07-08,119,0)
+(3, 2024-07-09, 2024-07-20,65,1)
+(3, 2024-07-21, 2024-08-28,55,1)
+...
+
+Requêtes :
+/* Selectionner les voitures selon des dates précises */
+SELECT id, marque, modele, prixJour
+FROM Voiture V
+JOIN Disponibilite D ON D.idVehicule = V.id
+WHERE statut = 1 
+AND dateDeb = 2024-05-26
+AND dateFin = 2024-06-02;
+
+
+/* Selectionner les voitures selon des dates à 1 jour près */
+SELECT id, marque, modele, prixJour
+FROM Voiture V
+JOIN Disponibilite D ON D.idVehicule = V.id
+WHERE statut = 0
+AND D.dateDebut BETWEEN DATE_SUB('2024-05-26', INTERVAL 1 DAY) AND DATE_ADD('2024-05-01', INTERVAL 1 DAY)
+OR D.dateFin BETWEEN DATE_SUB('2024-06-01', INTERVAL 1 DAY) AND DATE_ADD('2024-06-01', INTERVAL 1 DAY);
+
+/* Trier les véhicules selon leur prix */
+SELECT id, marque, modele, prixJour
+FROM Voiture V
+JOIN Disponibilite D ON D.idVehicule = V.id
+ORDER BY prixJour Desc;
+
+/* Mettre à jour une disponibilité */
+UPDATE Disponibilite
+SET statut = 1
+WHERE idVehicule = 1 
+AND dateDeb = 2024-05-26
+AND dateFin = 2024-06-02
+
+
+/* Suppression d'une voiture */
+DELETE FROM Voiture
+WHERE id = 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
